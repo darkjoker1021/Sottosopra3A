@@ -6,15 +6,22 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-      child: ListView.builder(
-        itemCount: 4,
-        itemBuilder: (context, index) {
-          return News();
-        },
+    return SingleChildScrollView(
+      child: Column(
+      children: [
+        Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+          child: ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: 4,
+            itemBuilder: (context, index) {
+              return News();
+            },
+          ),
         ),
-      );
+      ],
+      )
+    );
   }
 }
