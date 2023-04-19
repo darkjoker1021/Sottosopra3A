@@ -6,15 +6,48 @@ class News extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Container(
-            width: 300,
-          child: Column(children: [
-            Container(
-              child: Image.asset("lib/assets/fiori.jpg", width: 300,),
-            )
-          ]),
-          )
-        );
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: Image.asset(
+              "lib/assets/fiori.jpg",
+            ),
+          ),
+          Row(
+            children: [
+              Icon(
+                Icons.calendar_today,
+                color: Colors.grey,
+              ),
+              Text(
+                '15 Aprile 2023',
+                style: TextStyle(color: Colors.grey),
+              ),
+              Icon(
+                Icons.person,
+                color: Colors.grey,
+              ),
+              Text(
+                'Redazione',
+                style: TextStyle(color: Colors.grey),
+              ),
+              Icon(Icons.chat_bubble_outline),
+              Text(
+                '0',
+                style: TextStyle(color: Colors.grey),
+              ),
+            ],
+          ),
+          Text(
+            'Guido è il GOAT',
+            style: TextStyle(fontSize: 20),
+          ),
+          Text('non bisogna argomentare'),
+        ],
+      ),
+    );
   }
 }
